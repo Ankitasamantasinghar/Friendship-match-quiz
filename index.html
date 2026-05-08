@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Well Do You Know Me?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- START PAGE -->
+    <div id="startPage">
+      <h1>✨ How Well Do You Know Me?</h1>
+      <input id="nameInput" placeholder="Enter your name" oninput="checkName()">
+      <button id="startBtn" onclick="startQuiz()" disabled>Start Quiz</button>
+      
+      <div class="admin-section">
+        <button class="admin-toggle" onclick="toggleAdmin()">Admin Mode</button>
+        <div id="adminPanel" class="hidden">
+          <input id="adminPass" type="password" placeholder="Admin password">
+          <button onclick="enableAdmin()">Login</button>
+        </div>
+      </div>
+
+      <h2>🏆 Leaderboard</h2>
+      <div id="homeBoard"></div>
+    </div>
+
+    <!-- QUIZ PAGE -->
+    <div id="quizPage" class="hidden">
+      <div id="progress"></div>
+      <div id="question"></div>
+      <div class="options" id="options"></div>
+      <div class="nav">
+        <button onclick="prevQuestion()" id="backBtn">Back</button>
+        <button onclick="nextQuestion()" id="nextBtn">Next</button>
+      </div>
+    </div>
+
+    <!-- RESULT PAGE -->
+    <div id="resultPage" class="hidden">
+      <h1>Your Result!</h1>
+      <h2 id="scoreText"></h2>
+      <div id="friendType"></div>
+      <div id="board"></div>
+      <button onclick="location.reload()">Play Again</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
